@@ -24,15 +24,121 @@ I want to make sure each box contains a nice mix of truffles with no two truffle
 
 Create a file named `chocolate_boxes.py` and write a Python function named `make_boxes` that takes one argument, a dictionary of truffles, and returns a list of lists of the contents of the 25 boxes that satisfy the requirements in a reasonable amount of computational time. Your lists for each box should contain four integers for the four truffles placed into the box. Please comment out any `input()` statements before submitting. It's okay to have `print()` statements, but they will be ignored. **Submit your `.py` file to Gradescope**, unless indicated otherwise by your Canvas course.
 
-Example using a dictionary with 8 truffles and making 2 boxes:
+Example dictionary named `chocolates` for testing:
+```python
+chocolates = {1: ["milk", "round", "toffee", "sprinkles"],
+2: ["milk", "square", "coconut", "none"],
+3: ["dark", "heart", "strawberry", "white chocolate drizzle"],
+4: ["dark", "round", "toffee", "white chocolate drizzle"],
+5: ["milk", "square", "caramel", "nuts"],
+6: ["milk", "heart", "toffee", "dark chocolate drizzle"],
+7: ["dark", "rectangle", "caramel", "none"],
+8: ["dark", "heart", "strawberry", "white chocolate drizzle"],
+9: ["dark", "heart", "coconut", "white chocolate drizzle"],
+10: ["milk", "square", "coconut", "none"],
+11: ["milk", "round", "vanila", "dark chocolate drizzle"],
+12: ["milk", "round", "strawberry", "nuts"],
+13: ["milk", "rectangle", "caramel", "sprinkles"],
+14: ["dark", "rectangle", "toffee", "none"],
+15: ["dark", "heart", "toffee", "none"],
+16: ["dark", "heart", "coconut", "white chocolate drizzle"],
+17: ["dark", "round", "vanila", "none"],
+18: ["dark", "rectangle", "toffee", "dark chocolate drizzle"],
+19: ["milk", "round", "toffee", "none"],
+20: ["milk", "square", "caramel", "dark chocolate drizzle"],
+21: ["milk", "square", "vanila", "none"],
+22: ["dark", "heart", "caramel", "sprinkles"],
+23: ["milk", "square", "caramel", "nuts"],
+24: ["milk", "round", "caramel", "dark chocolate drizzle"],
+25: ["milk", "round", "coconut", "dark chocolate drizzle"],
+26: ["dark", "round", "coconut", "dark chocolate drizzle"],
+27: ["milk", "rectangle", "strawberry", "sprinkles"],
+28: ["white", "heart", "vanila", "none"],
+29: ["dark", "heart", "strawberry", "none"],
+30: ["dark", "rectangle", "caramel", "none"],
+31: ["white", "round", "caramel", "none"],
+32: ["milk", "heart", "vanila", "none"],
+33: ["white", "round", "strawberry", "nuts"],
+34: ["milk", "round", "coconut", "none"],
+35: ["dark", "rectangle", "coconut", "dark chocolate drizzle"],
+36: ["milk", "round", "vanila", "dark chocolate drizzle"],
+37: ["dark", "round", "coconut", "white chocolate drizzle"],
+38: ["dark", "round", "coconut", "white chocolate drizzle"],
+39: ["dark", "round", "coconut", "dark chocolate drizzle"],
+40: ["dark", "round", "strawberry", "dark chocolate drizzle"],
+41: ["milk", "rectangle", "toffee", "none"],
+42: ["milk", "round", "strawberry", "white chocolate drizzle"],
+43: ["milk", "heart", "coconut", "none"],
+44: ["white", "round", "strawberry", "white chocolate drizzle"],
+45: ["milk", "heart", "toffee", "sprinkles"],
+46: ["milk", "rectangle", "strawberry", "none"],
+47: ["white", "round", "caramel", "dark chocolate drizzle"],
+48: ["white", "square", "toffee", "none"],
+49: ["milk", "rectangle", "toffee", "none"],
+50: ["dark", "rectangle", "caramel", "none"],
+51: ["milk", "square", "vanila", "none"],
+52: ["dark", "round", "toffee", "dark chocolate drizzle"],
+53: ["milk", "round", "toffee", "white chocolate drizzle"],
+54: ["dark", "square", "strawberry", "none"],
+55: ["milk", "heart", "caramel", "dark chocolate drizzle"],
+56: ["milk", "heart", "vanila", "none"],
+57: ["milk", "heart", "caramel", "none"],
+58: ["milk", "heart", "coconut", "sprinkles"],
+59: ["milk", "heart", "vanila", "sprinkles"],
+60: ["dark", "square", "caramel", "none"],
+61: ["milk", "rectangle", "vanila", "none"],
+62: ["milk", "heart", "toffee", "none"],
+63: ["milk", "heart", "vanila", "dark chocolate drizzle"],
+64: ["white", "round", "coconut", "white chocolate drizzle"],
+65: ["milk", "round", "coconut", "nuts"],
+66: ["milk", "round", "coconut", "white chocolate drizzle"],
+67: ["dark", "heart", "coconut", "none"],
+68: ["dark", "square", "toffee", "none"],
+69: ["dark", "round", "strawberry", "dark chocolate drizzle"],
+70: ["milk", "heart", "caramel", "none"],
+71: ["milk", "square", "caramel", "sprinkles"],
+72: ["milk", "rectangle", "strawberry", "sprinkles"],
+73: ["dark", "heart", "strawberry", "none"],
+74: ["dark", "heart", "strawberry", "none"],
+75: ["dark", "square", "coconut", "none"],
+76: ["dark", "heart", "caramel", "none"],
+77: ["dark", "heart", "coconut", "nuts"],
+78: ["white", "rectangle", "caramel", "dark chocolate drizzle"],
+79: ["milk", "heart", "vanila", "sprinkles"],
+80: ["white", "heart", "strawberry", "none"],
+81: ["dark", "round", "toffee", "white chocolate drizzle"],
+82: ["dark", "round", "vanila", "none"],
+83: ["white", "square", "coconut", "none"],
+84: ["milk", "rectangle", "caramel", "dark chocolate drizzle"],
+85: ["white", "heart", "toffee", "none"],
+86: ["white", "round", "caramel", "nuts"],
+87: ["white", "round", "caramel", "none"],
+88: ["dark", "round", "caramel", "none"],
+89: ["dark", "square", "coconut", "nuts"],
+90: ["milk", "heart", "vanila", "none"],
+91: ["dark", "round", "coconut", "none"],
+92: ["dark", "round", "caramel", "none"],
+93: ["white", "round", "toffee", "none"],
+94: ["milk", "round", "vanila", "sprinkles"],
+95: ["white", "round", "strawberry", "white chocolate drizzle"],
+96: ["dark", "square", "strawberry", "nuts"],
+97: ["milk", "round", "vanila", "none"],
+98: ["milk", "rectangle", "caramel", "sprinkles"],
+99: ["milk", "heart", "vanila", "none"],
+100: ["dark", "rectangle", "strawberry", "white chocolate drizzle"],
+}
 ```
+
+
+Example using a dictionary with 8 truffles and making 2 boxes:
+```python
 chocolates = {1: ["milk", "heart", "caramel", "none"],
 2: ["dark", "round", "strawberry", "dark chocolate drizzle"],
-3: ["dark", "heart", "caramel", "none"],
+3: ["dark", "heart", "caramel", "white chocolate drizzle"],
 4: ["milk", "square", "toffee", "none"],
 5: ["dark", "round", "caramel", "nuts"],
 6: ["white", "heart", "vanila", "sprinkles"],
-7: ["dark", "rectangle", "strawberry", "sprinkles"],
+7: ["dark", "rectangle", "coconut", "sprinkles"],
 8: ["white", "heart", "vanila", "none"]}
 ```
 
@@ -43,6 +149,28 @@ chocolates = {1: ["milk", "heart", "caramel", "none"],
 ***You may use ChatGPT or similar AI tools to complete this lab. This is the ONE TIME in ENGR 102 that it's okay to use AI!***
 
 When debugging, remember DRIFT: discover, reproduce, isolate, fix, and test. It's a good idea to come up with several test cases to test whatever code you start with **before** you start making changes.
+
+You may want to create different dictionaries to test your code. The code below will print a randomly generated dictionary named `chocolates`.
+```python
+from random import choice
+
+cocoa = ["dark", "milk", "white"]
+filling = ["strawberry", "vanila", "caramel", "coconut", "toffee"]
+shape = ["round", "square", "rectangle", "heart"]
+topping = ["sprinkles", "nuts", "white chocolate drizzle", "dark chocolate drizzle", "none"]
+
+print("chocolates = {", end="")
+for i in range(1, 101):
+    print(f'{i}: ["{choice(cocoa)}", "{choice(shape)}", "{choice(filling)}", "{choice(topping)}"],')
+print("}")
+```
+The `choice` function from the `random` module wil randomly choose one value in the specified list. If you want to increase the chances of picking a particular value, add that value multiple times in the list. For example, 
+```python
+cocoa = ["dark", "milk", "white", "dark", "dark", "dark"]
+print(choice(cocoa))
+```
+will have a 4 in 6 chance of printing `dark`, a 1 in 6 chance of printing `milk`, and a 1 in 6 chance of printing `white`.
+
 
 ### Part 2
 After your team has found a solution to the problem, reflect on how you got there. Create a document named `chocolate_boxes_reflection.pdf` and include a brief description of your process. Answer the following questions in complete sentences. Write about 75 words in each of your answers for questions 4 through 7.
