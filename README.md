@@ -17,7 +17,45 @@ LLMs can generate human-like responses for a wide array of topics, even those th
 
 
 ## Chocolate Boxes
-write stuff
+### Part 1
+I want to make 25 boxes of chocolate truffles to give to my friends on Valentine's Day. I have 100 chocolate truffles to put into my boxes, so I will have 4 truffles per box. Each truffle is made of dark, milk, or white chocolate. They also have a filling of strawberry creme, vanilla creme, caramel, coconut, or toffee. Each truffle is either round, square, rectangle, or heart shaped. They also have one topping of either sprinkles, nuts, white chocolate drizzle, dark chocolate drizzle, or nothing. Information on each truffle is stored in the dictionary named `chocolates` shown below. Truffles are identified by an integer (1 to 100) and information on each is stored as a list of strings in the order `[<type of chocolate>, <shape>, <filling>, <topping>]`. 
+
+I want to make sure each box contains a nice mix of truffles with no two truffles exactly the same. My friends that like caramel don't like vanilla creme, so make sure no box contains both fillings. My friends that like nuts don't like sprinkles, so make sure no box contains both toppings. My boxes are designed to fit either rectangles or squares, but not both so make sure no box contains both shapes. I have some friends that prefer truffles made from dark chocolate, so make sure boxes with dark chocolate truffles contain at least two, but no more than three, dark chocolate truffles.
+
+Create a file named `chocolate_boxes.py` and write a Python function named `make_boxes` that takes one argument, a dictionary of truffles, and returns a list of lists of the contents of the 25 boxes that satisfy the requirements in a reasonable amount of computational time. Your lists for each box should contain four integers for the four truffles placed into the box. Please comment out any `input()` statements before submitting. It's okay to have `print()` statements, but they will be ignored. **Submit your `.py` file to Gradescope**, unless indicated otherwise by your Canvas course.
+
+Example using a dictionary with 8 truffles and making 2 boxes:
+```
+chocolates = {1: ["milk", "heart", "caramel", "none"],
+2: ["dark", "round", "strawberry", "dark chocolate drizzle"],
+3: ["dark", "heart", "caramel", "none"],
+4: ["milk", "square", "toffee", "none"],
+5: ["dark", "round", "caramel", "nuts"],
+6: ["white", "heart", "vanila", "sprinkles"],
+7: ["dark", "rectangle", "strawberry", "sprinkles"],
+8: ["white", "heart", "vanila", "none"]}
+```
+
+`make_boxes(chocolates)` may return the list of lists `[[1, 3, 4, 5], [2, 6, 7, 8]]`
+
+**There may be many correct solutions.**
+
+***You may use ChatGPT or similar AI tools to complete this lab. This is the ONE TIME in ENGR 102 that it's okay to use AI!***
+
+When debugging, remember DRIFT: discover, reproduce, isolate, fix, and test. It's a good idea to come up with several test cases to test whatever code you start with **before** you start making changes.
+
+### Part 2
+After your team has found a solution to the problem, reflect on how you got there. Create a document named `chocolate_boxes_reflection.pdf` and include a brief description of your process. Answer the following questions in complete sentences. Write about 75 words in each of your answers for questions 4 through 7.
+1.	What AI tools did your team use (if any)?
+2.	Did the AI tools your team used solve the problem correctly on the first try? If not, how many tries did it take?
+3.	What prompt(s) produced the correct solution?
+4.	Did the results surprise you? Why (not)?
+5.	Do you plan to use AI tools again (future courses, your career, personal life, etc)? Why (not)?
+6.	Briefly explain how AI tools can (or can't) be helpful for debugging code.
+7.	Briefly describe what you found to be the most difficult part of this assignment.
+
+**Submit your `.pdf` file to Canvas.**
+
 
 ## Frequently Asked Questions
 1. **Wait, we get to use AI tools?!** Yes... you may use AI tools to complete this assignment. ***ONLY this assignment.***
@@ -26,5 +64,5 @@ write stuff
 
 Have a question you don't see here? Email your instructor!
 
-Based upon Dr. Keyser’s Original<br/>
+Based upon Dr. Keyser's Original<br/>
 Revised Fall 2025 SNR
