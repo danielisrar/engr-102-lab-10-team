@@ -192,5 +192,4 @@ After your team has found a solution to the problem, reflect on how you got ther
 
 Have a question you don't see here? Email your instructor!
 
-Based upon Dr. Keyser's Original<br/>
-Revised Fall 2025 SNR
+Original Fall 2025 SNR
