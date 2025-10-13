@@ -148,7 +148,7 @@ chocolates = {1: ["milk", "heart", "caramel", "none"],
 
 ***You may use ChatGPT or similar AI tools to complete this lab. This is the ONE TIME in ENGR 102 that it's okay to use AI!***
 
-When debugging, remember DRIFT: discover, reproduce, isolate, fix, and test. It's a good idea to come up with several test cases to test whatever code you start with **before** you start making changes.
+When debugging, remember DRIFT: discover, reproduce, isolate, fix, and test. It's a good idea to come up with several test cases to test whatever code you start with **before** you make changes.
 
 You may want to create different dictionaries to test your code. The code below will print a randomly generated dictionary named `chocolates`.
 ```python
