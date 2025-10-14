@@ -164,7 +164,7 @@ for i in range(1, 101):
     print(f'{i}: ["{choice(cocoa)}", "{choice(shape)}", "{choice(filling)}", "{choice(topping)}"],')
 print("}")
 ```
-The `choice` function from the `random` module wil randomly choose one value in the specified list. If you want to increase the chances of picking a particular value, add that value multiple times in the list. For example, 
+The `choice` function from the `random` module will randomly choose one value in the specified list. If you want to increase the chances of picking a particular value, add that value multiple times in the list. For example, 
 ```python
 cocoa = ["dark", "milk", "white", "dark", "dark", "dark"]
 print(choice(cocoa))
